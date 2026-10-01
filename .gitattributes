@@ -1,2 +1,21 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#Import data from gist
+
+
+!wget https://gist.githubusercontent.com/mistyPi/155c0bc2597c9628be1b8ffdeda4d49d/raw/df541b1e2dc3e16847fde3c075f4780e5e7b8efc/internet_ussage.csv
+
+import csv
+
+filename = 'internet_ussage.csv'
+
+
+with open(filename, 'r') as csvfile:
+  reader = csv.DictReader(csvfile)
+  for line in reader:
+    continent = line['continent']
+    year = line['year']
+    population = line['population']
+
+    print(continent)
+    print(year)
+    print(population)
+
